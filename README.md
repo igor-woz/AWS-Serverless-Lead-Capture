@@ -1,6 +1,44 @@
 # Serverless Lead Capture on AWS
 
-A fully serverless web application that hosts a static website and captures lead/contact form submissions — sending email notifications via SES and storing data in DynamoDB.
+A fully serverless web application that hosts a static website and captures lead/contact form submissions — sending email notifications via SES and storing data in DynamoDB. This project is a part of Udemy Course: "AWS Cloud Projects for Engineers: 5 Real-World Projects" by Pravin Mishra and is published here to demonstrate its completion and understanding.
+
+## What I learned
+
+By completing this project, I gained hands-on experience with:
+
+**Cloud & Serverless Fundamentals**
+- How to design and build a serverless architecture on AWS without managing any servers
+- How AWS services integrate with each other to form a complete, production-style application
+
+**Static Website Hosting**
+- Hosting a static website on **Amazon S3** with public access policies
+- Accelerating global delivery using **Amazon CloudFront** as a CDN with HTTPS (SSL/TLS via ACM)
+- Mapping a custom domain using **Amazon Route 53**
+
+**Serverless Backend Development**
+- Writing and deploying **AWS Lambda** functions in Node.js using the AWS SDK v3
+- Building and configuring a **REST API with API Gateway**, including resource/method setup, CORS configuration, and stage deployment
+- Sending transactional emails programmatically using **Amazon SES**
+
+**Data Persistence**
+- Creating and querying a **DynamoDB** table (NoSQL) via the AWS CLI and console
+- Using the `DynamoDBDocumentClient` with `PutCommand` to store structured form data
+- Generating unique record IDs with `randomUUID` and storing ISO timestamps
+
+**Security & IAM Best Practices**
+- Creating least-privilege **IAM policies** scoped to specific AWS actions (e.g., `ses:SendEmail`, `dynamodb:PutItem`)
+- Attaching **IAM roles** to Lambda functions rather than hardcoding credentials
+- Understanding multi-layer access control (bucket policies, IAM, CORS)
+
+**Debugging & Observability**
+- Testing API endpoints with **cURL** (both OPTIONS preflight and POST requests)
+- Monitoring Lambda execution logs in **Amazon CloudWatch**
+- Verifying end-to-end data flow from a browser form submission to DynamoDB
+
+**Frontend Integration**
+- Connecting a static HTML form to a serverless backend using the browser `fetch` API
+- Handling async form submission with error/success feedback in vanilla JavaScript
+
 
 ## Architecture
 
@@ -137,3 +175,9 @@ Ebook/
 3. **Update the Lambda function** to write form submissions to DynamoDB (`ContactMessages` table) in addition to sending the SES email.
 
 4. **Deploy and verify** entries appear in DynamoDB after a form submission.
+
+---
+
+##License
+
+This project is for educational purposes. See the original walkthrough for full details.

@@ -137,9 +137,3 @@ Ebook/
 3. **Update the Lambda function** to write form submissions to DynamoDB (`ContactMessages` table) in addition to sending the SES email.
 
 4. **Deploy and verify** entries appear in DynamoDB after a form submission.
-
----
-
-## License
-
-This project is for educational purposes. See the original walkthrough for full details.
